@@ -48,12 +48,17 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Email Spam Message Classifier</h1>
+    
         <form method="POST" action="{{ url_for('analyze_mail') }}">
             <div class="form-group">
                 <label for="mail">Enter your mail context:</label>
                 <textarea class="form-control" id="mail" name="mail" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Analyze</button>
+{#            <button type="submit" class="btn btn-primary">Analyze</button>#}
+{#            <button type="submit" class="btn btn-primary">Analyze</button>#}
+{#            <button type="submit" class="btn btn-primary">Analyze</button>#}
+{#            <button type="submit" class="btn btn-primary">Analyze</button>#}
         </form>
 
         {% if classify is defined %}
