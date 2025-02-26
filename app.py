@@ -9,6 +9,7 @@ app = Flask(__name__)
 # model = pickle.load(open('random_forest_model.pkl','rb'))
 # feature_extraction = pickle.load(open('feature_extraction.pkl','rb'))
 
+
 # model = pickle.load(open('naive_bayes_model.pkl','rb'))
 # feature_extraction = pickle.load(open('feature_extraction.pkl','rb'))
 
