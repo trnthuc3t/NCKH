@@ -79,4 +79,4 @@ else:
 # Lưu mô hình SVM và vectorizer đã huấn luyện
 import pickle
 pickle.dump(model, open("svm_model.pkl", "wb"))
-pickle.dump(feature_extraction, open("feature_extraction.pkl", "wb"))
+pickle.dump(feature_extraction, open("feature_extraction_svm.pkl", "wb"))

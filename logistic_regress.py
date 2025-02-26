@@ -65,4 +65,4 @@ else:
     import pickle
 
     pickle.dump(model, open("logistic_regressio.pkl", "wb"))
-    pickle.dump(feature_extraction, open("feature_extraction.pkl", "wb"))
+    pickle.dump(feature_extraction, open("feature_extraction_logistic_regressio.pkl", "wb"))

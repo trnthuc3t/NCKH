@@ -8,6 +8,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, precision_score, recall_score, f1_score
+import nltk
+nltk.download('punkt_tab')
 
 # Kiểm tra và tải tài nguyên nltk nếu cần thiết
 try:
@@ -85,4 +87,4 @@ print("\nBáo cáo phân loại:\n", classification_report(y_test, y_pred, targe
 
 # **Lưu mô hình và vectorizer**
 pickle.dump(rf_classifier, open("random_forest_model.pkl", "wb"))
-pickle.dump(tfvec, open("feature_extraction.pkl", "wb"))
+pickle.dump(tfvec, open("feature_extraction_random_forest.pkl", "wb"))

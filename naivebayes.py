@@ -66,4 +66,4 @@ print('Confusion Matrix is: \n', cmat)
 
 # Lưu mô hình và bộ trích xuất đặc trưng vào file
 pickle.dump(classifier, open("naive_bayes_model.pkl", "wb"))
-pickle.dump(tfvec, open("feature_extraction.pkl", "wb"))
+pickle.dump(tfvec, open("feature_extraction_naive_bayes.pkl", "wb"))

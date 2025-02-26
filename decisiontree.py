@@ -68,4 +68,4 @@ print(f"F1-Score: {f1*100:.2f}%")
 
 # Lưu mô hình và vectorizer
 pickle.dump(dt_classifier, open("decision_tree_model.pkl", "wb"))
-pickle.dump(tfvec, open("feature_extraction.pkl", "wb"))
+pickle.dump(tfvec, open("feature_extraction_decision_tree.pkl", "wb"))
