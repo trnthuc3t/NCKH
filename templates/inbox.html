@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hòm thư - Gmail Clone</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h3>Hòm thư của bạn</h3>
+    {% if emails %}
+        <ul class="list-group">
+        {% for email in emails %}
+            <li class="list-group-item">
+                <strong>Người gửi:</strong> {{ email.sender }} <br>
+                <strong>Nội dung:</strong> {{ email.content }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Hòm thư trống.</p>
+    {% endif %}
+    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary mt-3">Trở lại Dashboard</a>
+</div>
+</body>
+</html>
