@@ -32,30 +32,35 @@
     <div class="container mt-5">
         <h1 class="mb-4">Email Spam Message Classifier</h1>
 
-        <form method="POST" action="{{ url_for('analyze_mail') }}">
+        {% if latest_email %}
             <div class="form-group">
-                <label for="mail">Enter your mail context:</label>
-                <textarea class="form-control" id="mail" name="mail" rows="3"></textarea>
+                <label>Latest Email Received:</label>
+                <textarea class="form-control" rows="3" readonly>{{ latest_email }}</textarea>
             </div>
-            <div class="form-group">
-                <label for="model">Choose classification model:</label>
-                <select class="form-control" id="model" name="model">
-                    {% for model in models %}
-                        <option value="{{ model }}" {% if model == selected_model %}selected{% endif %}>{{ model.replace('_', ' ').title() }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Analyze</button>
-        </form>
 
-        {% if classify is not none %}
-            <div class="mt-4">
-                {% if classify == 0 %}
-                    <div class="alert alert-danger" role="alert">This is a spam mail</div>
-                {% elif classify == 1 %}
-                    <div class="alert alert-success" role="alert">This is a ham mail</div>
-                {% endif %}
-            </div>
+            <form method="POST" action="{{ url_for('analyze_mail') }}">
+                <div class="form-group">
+                    <label for="model">Choose classification model:</label>
+                    <select class="form-control" id="model" name="model">
+                        {% for model in models %}
+                            <option value="{{ model }}">{{ model.replace('_', ' ').title() }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Analyze</button>
+            </form>
+
+            {% if classify is not none %}
+                <div class="mt-4">
+                    {% if classify == 0 %}
+                        <div class="alert alert-danger" role="alert">This is a spam mail</div>
+                    {% elif classify == 1 %}
+                        <div class="alert alert-success" role="alert">This is a ham mail</div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% else %}
+            <p>No new emails yet. Send an email to your Gmail account to see it here.</p>
         {% endif %}
     </div>
 
